@@ -1,3 +1,9 @@
-from django.db import models
+from core.models import Core, models
 
-# Create your models here.
+class Cancion(Core):
+	album = models.CharField(max_length=255)
+	foto = models.ImageField(upload_to="media/")
+	
+
+	def __unicode__(self):
+		return self.titulo

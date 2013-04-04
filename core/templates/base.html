@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Cancionante{% endblock %}</title>
+	{% block css %}{% endblock %}
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	{% block js %}{% endblock %}
+</head>
+<body>
+	<header>
+		<h1>Cancionante</h1>
+	</header>
+	<section id="side">
+		<nav id="menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/restaurante">Restaurantes</a></li>
+				<li><a href="/cancion">Canciones</a></li>
+			</ul>
+		</nav>
+	</section>
+	<section id="content">
+		{% block content %}
+		{% endblock %}
+	</section>
+</body>
+</html>

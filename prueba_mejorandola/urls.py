@@ -14,4 +14,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'core.views.home'),
+    url(r'^restaurante/$', 'restaurante.views.show_restaurantes'),
+    url(r'^restaurante/(?P<id>\d+)/$', 'restaurante.views.cargar_restaurante'),
+    url(r'^restaurante/eliminar/(?P<id>\d+)/$', 'restaurante.views.eliminar_restaurante'),
 )

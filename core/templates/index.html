@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div id="restaurantes">
+		<h2>Restaurantes</h2>
+		{% include "restaurantes_for.html" with url="restaurante/" %}
+	</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% for restaurante in restaurantes %}
+<a href="{{ url }}{{ restaurante.id }}/">
+	<div>
+		<p>{{ restaurante.titulo }}</p>
+		<p>{{ restaurante.autor }}</p>
+		<p>{{ restaurante.tipo_comida }}</p>
+	</div>
+</a>
+{% endfor %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ restaurante.titulo }} - Cancionante{% endblock %}
+
+{% block js %}
+<script src="/static/js/restaurante.js"></script>
+{% endblock %}
+
+{% block content %}
+<div id="restaurante-id" data-id="{{ restaurante.id }}">
+	<h2>{{ restaurante.titulo }}</h2>
+	<p><span>Autor:</span>{{ restaurante.autor }}</p>
+	<p><span>Tipo de comida:</span>{{ restaurante.tipo_comida }}</p>
+	<p><span>Dirección:</span>{{ restaurante.direccion }}</p>
+	<p><span>Contenido:</span>{{ restaurante.contenido }}</p>
+	<p>
+		<button id="eliminar">Eliminar</button>
+		<button id="editar">Editar</button>
+	</p>
+</div>
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="button" id="cancelar">Cancelar</button>
+	<input type="submit" value="Enviar">
+</form>
+{% endblock %}
