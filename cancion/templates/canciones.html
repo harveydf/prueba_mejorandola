@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Canciones - Cancionante{% endblock %}
+
+{% block js %}
+<script src="/static/js/canciones.js"></script>
+{% endblock %}
+
+{% block content %}
+	{% include "canciones_for.html" %}
+	<button id="nuevo">Nuevo</button>
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="button" id="cancelar">Cancelar</button>
+		<input type="submit" value="Enviar">
+	</form>
+{% endblock %}

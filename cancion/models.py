@@ -1,3 +1,5 @@
+from django.forms import ModelForm
+
 from core.models import Core, models
 
 class Cancion(Core):
@@ -7,3 +9,8 @@ class Cancion(Core):
 
 	def __unicode__(self):
 		return self.titulo
+
+class CancionForm(ModelForm):
+
+	class Meta:
+		model = Cancion
