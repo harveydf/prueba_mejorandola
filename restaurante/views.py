@@ -14,7 +14,7 @@ def get_restaurantes(limit=None):
 
 	return restaurantes
 
-def show_restaurantes(request):
+def show_restaurante(request):
 	if request.method == 'POST':
 		form = RestauranteForm(request.POST)
 

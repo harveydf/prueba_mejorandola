@@ -14,7 +14,7 @@ def get_canciones(limit=None):
 
 	return canciones
 
-def show_canciones(request):
+def show_cancion(request):
 	if request.method == 'POST':
 		form = CancionForm(request.POST, request.FILES)
 
