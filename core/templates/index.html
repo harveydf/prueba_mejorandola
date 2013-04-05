@@ -1,12 +1,64 @@
-{% extends "base.html" %}
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Cancionante{% endblock %}</title>
 
-{% block content %}
-	<div id="restaurantes">
-		<h2>Restaurantes</h2>
-		{% include "restaurantes_for.html" with url="restaurante/" %}
-	</div>
-	<div id="canciones">
-		<h2>Canciones</h2>
-		{% include "canciones_for.html" with url="cancion/" %}
-	</div>
-{% endblock %}
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	{% block js %}{% endblock %}
+
+</head>
+<body>
+	<header>
+		<h1>Cancionante</h1>
+	</header>
+	<section id="side">
+		<nav id="menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/restaurante">Restaurantes</a></li>
+				<li><a href="/cancion">Canciones</a></li>
+			</ul>
+		</nav>
+	</section>
+	<section id="content">
+		{% block content %}
+			{% if restaurantes %}
+			<div id="restaurantes">
+				<h2>Restaurantes</h2>
+				
+				{% for restaurante in restaurantes %}
+				<a href="/restaurante/{{ restaurante.id }}/">
+					<div>
+						<p>{{ restaurante.titulo }}</p>
+						<p>{{ restaurante.autor }}</p>
+						<p>{{ restaurante.tipo_comida }}</p>
+					</div>
+				</a>
+				{% endfor %}
+
+			</div>
+			{% endif %}
+			{% if canciones %}
+			<div id="canciones">
+				<h2>Canciones</h2>
+				
+				{% for cancion in canciones %}
+				<a href="/cancion/{{ cancion.id }}/">
+					<div>
+						<p>{{ cancion.titulo }}</p>
+						<p>{{ cancion.autor }}</p>
+						<p>{{ cancion.album }}</p>
+					</div>
+				</a>
+				{% endfor %}
+			
+			</div>
+			{% endif %}
+
+			{% block form %}
+			{% endblock %}
+		{% endblock %}
+	</section>
+</body>
+</html>

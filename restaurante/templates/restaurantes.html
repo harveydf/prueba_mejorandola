@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}Restaurantes - Cancionante{% endblock %}
 
@@ -6,8 +6,7 @@
 <script src="/static/js/restaurante.js"></script>
 {% endblock %}
 
-{% block content %}
-	{% include "restaurantes_for.html" %}
+{% block form %}
 	<button id="nuevo">Nuevo</button>
 	<form action="" method="post">
 		{% csrf_token %}

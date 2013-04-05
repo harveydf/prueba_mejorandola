@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}Canciones - Cancionante{% endblock %}
 
@@ -6,9 +6,8 @@
 <script src="/static/js/canciones.js"></script>
 {% endblock %}
 
-{% block content %}
-	{% include "canciones_for.html" %}
-	<button id="nuevo">Nuevo</button>
+{% block form %}
+<button id="nuevo">Nuevo</button>
 	<form action="" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form.as_p }}
