@@ -1,0 +1,16 @@
+{% for modulo in modulos %}
+<a href="/{{ tipo }}/{{ modulo.id }}/">
+	<div>
+		<p>{{ modulo.titulo }}</p>
+		<p>{{ modulo.autor }}</p>
+		
+		{% ifequal tipo "restaurante" %}
+		<p>{{ modulo.tipo_comida }}</p>
+		{% endifequal %}
+		
+		{% ifequal tipo "cancion" %}
+		<p>{{ modulo.album }}</p>
+		{% endifequal %}
+	</div>
+</a>
+{% endfor %}

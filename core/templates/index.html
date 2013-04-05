@@ -26,32 +26,16 @@
 			{% if restaurantes %}
 			<div id="restaurantes">
 				<h2>Restaurantes</h2>
-				
-				{% for restaurante in restaurantes %}
-				<a href="/restaurante/{{ restaurante.id }}/">
-					<div>
-						<p>{{ restaurante.titulo }}</p>
-						<p>{{ restaurante.autor }}</p>
-						<p>{{ restaurante.tipo_comida }}</p>
-					</div>
-				</a>
-				{% endfor %}
+
+				{% include "render_for.html" with modulos=restaurantes tipo="restaurante" %}
 
 			</div>
 			{% endif %}
 			{% if canciones %}
 			<div id="canciones">
 				<h2>Canciones</h2>
-				
-				{% for cancion in canciones %}
-				<a href="/cancion/{{ cancion.id }}/">
-					<div>
-						<p>{{ cancion.titulo }}</p>
-						<p>{{ cancion.autor }}</p>
-						<p>{{ cancion.album }}</p>
-					</div>
-				</a>
-				{% endfor %}
+
+				{% include "render_for.html" with modulos=canciones tipo="cancion" %}
 			
 			</div>
 			{% endif %}
